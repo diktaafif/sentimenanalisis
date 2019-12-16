@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HOme">
+    tools:context=".Home">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,6 @@
             android:layout_height="58dp"
             android:layout_marginTop="20dp"
             android:weightSum="3">
-
 
             <ImageView
                 android:id="@+id/imageView"
@@ -68,33 +67,35 @@
             android:fontFamily="@font/montserrat"
             android:textAlignment="center"/>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="25dp"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:gravity="center"
-            android:weightSum="3">
-        <TextView
-            android:id="@+id/airterjun"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:text="Air Terjun"
-            android:textStyle="bold"
-            android:textSize="15dp"
-            android:textColor="#ffffff"
-            android:fontFamily="@font/montserrat"
-            android:textAlignment="center"/>
+            android:gravity="center">
 
-            <ImageView
+            <TextView
+                android:id="@+id/airterjun"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@android:color/white" />
-        </LinearLayout>
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="Air Terjun"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#FF4848"
+                app:layout_constraintBottom_toBottomOf="@+id/airterjun"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/airterjun" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/hutan"
@@ -119,8 +120,10 @@
             android:textAlignment="center"/>
     </LinearLayout>
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 
 </LinearLayout>
